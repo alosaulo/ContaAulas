@@ -51,7 +51,7 @@ namespace HorasSemestre
             endModule = dateTimeEnd.Value;
             while (startModule.Date != endModule.Date) {
                 bool containsDia = horasSemanais.dias.Any(horaDia => horaDia.Dia == startModule.DayOfWeek);
-                bool containsHolly = feriado.ferias.Contains(startModule);
+                bool containsHolly = feriado.ferias.Any(feriasDias => feriasDias.Date == startModule.Date);
                 if (containsDia && !containsHolly)
                 {
                     horasSemanais.diaTrabalho.Add(startModule.Date);
