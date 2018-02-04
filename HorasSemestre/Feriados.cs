@@ -12,28 +12,27 @@ namespace HorasSemestre
     class Feriados
     {
         public BindingList<DateTime> ferias = new BindingList<DateTime>();
+
         public Feriados() {
             CultureInfo culture = new CultureInfo("pt-BR");
             Thread.CurrentThread.CurrentCulture = culture;
-            ferias.Add(new DateTime(2017, 01, 01));
-            ferias.Add(new DateTime(2017, 02, 27));
-            ferias.Add(new DateTime(2017, 02, 28));
-            ferias.Add(new DateTime(2017, 03, 01));
-            ferias.Add(new DateTime(2017, 04, 13));
-            ferias.Add(new DateTime(2017, 04, 14));
-            ferias.Add(new DateTime(2017, 04, 21));
-            ferias.Add(new DateTime(2017, 04, 24));
-            ferias.Add(new DateTime(2017, 05, 01));
-            ferias.Add(new DateTime(2017, 05, 23));
-            ferias.Add(new DateTime(2017, 06, 15));
-            ferias.Add(new DateTime(2017, 06, 16));
-            ferias.Add(new DateTime(2017, 09, 07));
-            ferias.Add(new DateTime(2017, 10, 12));
-            ferias.Add(new DateTime(2017, 10, 13));
-            ferias.Add(new DateTime(2017, 10, 15));
-            ferias.Add(new DateTime(2017, 11, 02));
-            ferias.Add(new DateTime(2017, 11, 15));
-            ferias.Add(new DateTime(2017, 12, 25));
+            ferias.Add(new DateTime(2018, 02, 12));
+            ferias.Add(new DateTime(2018, 02, 13));
+            ferias.Add(new DateTime(2018, 02, 14));
+            ferias.Add(new DateTime(2018, 03, 29));
+            ferias.Add(new DateTime(2018, 03, 30));
+            ferias.Add(new DateTime(2018, 04, 09));
+            ferias.Add(new DateTime(2018, 04, 30));
+            ferias.Add(new DateTime(2018, 05, 01));
+            ferias.Add(new DateTime(2018, 05, 23));
+            ferias.Add(new DateTime(2018, 05, 31));
+            ferias.Add(new DateTime(2018, 06, 01));
+            ferias.Add(new DateTime(2018, 09, 07));
+            ferias.Add(new DateTime(2018, 10, 12));
+            ferias.Add(new DateTime(2018, 10, 15));
+            ferias.Add(new DateTime(2018, 11, 02));
+            ferias.Add(new DateTime(2018, 10, 15));
+
         }
 
         public void AddFeriado(DateTime data) {

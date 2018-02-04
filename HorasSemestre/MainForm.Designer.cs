@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.MainTabs = new System.Windows.Forms.TabControl();
             this.tabHoras = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtAulasMes = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.tblPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -45,7 +50,6 @@
             this.nmQui = new System.Windows.Forms.NumericUpDown();
             this.nmSex = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
@@ -55,12 +59,9 @@
             this.listFeriados = new System.Windows.Forms.ListBox();
             this.btnAddicionarFerias = new System.Windows.Forms.Button();
             this.calendarioFerias = new System.Windows.Forms.MonthCalendar();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtAulasMes = new System.Windows.Forms.RichTextBox();
             this.MainTabs.SuspendLayout();
             this.tabHoras.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tblPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmSeg)).BeginInit();
@@ -70,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmSex)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabFeriados.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTabs
@@ -97,6 +97,60 @@
             this.tabHoras.TabIndex = 1;
             this.tabHoras.Text = "Horas";
             this.tabHoras.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.txtAulasMes);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.txtOutput);
+            this.panel2.Location = new System.Drawing.Point(6, 194);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(453, 147);
+            this.panel2.TabIndex = 7;
+            // 
+            // txtAulasMes
+            // 
+            this.txtAulasMes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAulasMes.Location = new System.Drawing.Point(228, 21);
+            this.txtAulasMes.Name = "txtAulasMes";
+            this.txtAulasMes.Size = new System.Drawing.Size(219, 123);
+            this.txtAulasMes.TabIndex = 7;
+            this.txtAulasMes.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(229, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Aulas por mês";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Dias das aulas";
+            // 
+            // txtOutput
+            // 
+            this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOutput.Location = new System.Drawing.Point(7, 21);
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(219, 123);
+            this.txtOutput.TabIndex = 4;
+            this.txtOutput.Text = "";
             // 
             // groupBox1
             // 
@@ -244,17 +298,6 @@
             this.panel1.Size = new System.Drawing.Size(226, 182);
             this.panel1.TabIndex = 0;
             // 
-            // txtOutput
-            // 
-            this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOutput.Location = new System.Drawing.Point(7, 21);
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(219, 123);
-            this.txtOutput.TabIndex = 4;
-            this.txtOutput.Text = "";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -335,49 +378,6 @@
             this.calendarioFerias.Name = "calendarioFerias";
             this.calendarioFerias.TabIndex = 0;
             // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.txtAulasMes);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtOutput);
-            this.panel2.Location = new System.Drawing.Point(6, 194);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(453, 147);
-            this.panel2.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Dias das aulas";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(229, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Aulas por mês";
-            // 
-            // txtAulasMes
-            // 
-            this.txtAulasMes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAulasMes.Location = new System.Drawing.Point(228, 21);
-            this.txtAulasMes.Name = "txtAulasMes";
-            this.txtAulasMes.Size = new System.Drawing.Size(219, 123);
-            this.txtAulasMes.TabIndex = 7;
-            this.txtAulasMes.Text = "";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +390,8 @@
             this.Text = "Contagem de horas por semestre";
             this.MainTabs.ResumeLayout(false);
             this.tabHoras.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tblPanel.ResumeLayout(false);
             this.tblPanel.PerformLayout();
@@ -401,8 +403,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabFeriados.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

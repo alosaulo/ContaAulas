@@ -16,12 +16,33 @@ namespace HorasSemestre
         Feriados feriado = new Feriados();
         DateTime startModule = new DateTime();
         DateTime endModule = new DateTime();
-
+        DateTime localDate = DateTime.Now;
 
         public MainForm()
         {
             InitializeComponent();
             listFeriados.DataSource = feriado.ferias;
+            CheckStartEndModule();
+        }
+
+        public void CheckStartEndModule() {
+
+            DateTime startFirstModule = new DateTime(2018, 02, 01);
+            DateTime endFirstModule = new DateTime(2018, 07, 05);
+            DateTime startSecondModule = new DateTime(2018, 07, 23);
+            DateTime endSecondModule = new DateTime(2018, 12, 17);    
+            
+            if (localDate <= endFirstModule)
+            {
+                startModule = startFirstModule;
+                endModule = endFirstModule;
+            }
+            else {
+                startModule = startSecondModule;
+                endModule = endSecondModule;
+            }
+            dateTimeStart.Value = startModule;
+            dateTimeEnd.Value = endModule;
         }
 
         public void CheckHoras() {
@@ -60,16 +81,16 @@ namespace HorasSemestre
             }
         }
 
-
-
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             ClearAll();
             CheckHoras();
             DoTheMath();
             horasSemanais.CheckHorasTrabalho();
-            txtOutput.Text += horasSemanais.StringfyDiaTrabalho();
-            txtAulasMes.Text += horasSemanais.StringfyHorasTrabalho();
+
+            Stringify stringfy = new Stringify(horasSemanais);
+            txtOutput.Text += stringfy.StringifyDiaTrabalho();
+            txtAulasMes.Text += stringfy.StringifyHorasTrabalho();
         }
 
         private void btnAddicionarFerias_Click(object sender, EventArgs e)
